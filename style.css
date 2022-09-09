@@ -1,2 +1,17 @@
 /* style.css */
 /* ETCH-A-SKETCH */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  border: 2px dashed black;
+  width: 450px;
+  height: 450px;
+}
