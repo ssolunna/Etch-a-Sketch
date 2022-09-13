@@ -38,6 +38,6 @@ const NEW_GRID_BTN = document.createElement('button');
 NEW_GRID_BTN.textContent = 'New Grid';
 CONTAINER.before(NEW_GRID_BTN);
 NEW_GRID_BTN.onclick = () => {
-  let squaresPerSide = prompt('Number of squares per side for the new grid:', '16');
-  createGrid(squaresPerSide);
+  let squaresPerSide = Math.floor(Math.abs(prompt('Number of squares per side for the new grid (min 2, max 100):')));
+  if (squaresPerSide > 1 && squaresPerSide < 101) createGrid(squaresPerSide);
 }
