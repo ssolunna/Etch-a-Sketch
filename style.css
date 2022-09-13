@@ -18,6 +18,10 @@ body {
   flex-flow: row wrap;
 }
 
-.grid {
+.square {
   flex: 1 0 6.25%;
+}
+
+.passed-over {
+  background-color: black;
 }
