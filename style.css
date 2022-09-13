@@ -14,4 +14,10 @@ body {
   border: 2px dashed black;
   width: 450px;
   height: 450px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.grid {
+  flex: 1 0 6.25%;
 }
