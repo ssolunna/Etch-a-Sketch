@@ -1,15 +1,26 @@
 /* style.css */
 /* ETCH-A-SKETCH */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  font-family: 'Open Sans', Tahoma, sans-serif;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   margin: 0;
   height: 100vh;
   overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
 }
 
 .container {

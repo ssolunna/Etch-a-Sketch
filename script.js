@@ -2,6 +2,10 @@
 // ETCH-A-SKETCH
 
 const BODY = document.querySelector('body');
+const TITLE = document.createElement('h1');
+TITLE.classList.add('title');
+TITLE.textContent = 'Etch-A-Sketch';
+BODY.appendChild(TITLE);
 const CONTAINER = document.createElement('div');
 CONTAINER.classList.add('container');
 const SQUARE = document.createElement('div');
