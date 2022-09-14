@@ -55,3 +55,7 @@ const CLEAR_BTN = document.createElement('button');
 CLEAR_BTN.textContent = 'Clear';
 BUTTONS_CONTAINER.appendChild(CLEAR_BTN);
 CLEAR_BTN.onclick = () => createGrid(squaresPerSide);
+
+document.querySelectorAll('body, body>*, body>*>*').forEach(element => {
+  element.classList.add('dark-mode');
+});

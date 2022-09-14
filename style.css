@@ -36,8 +36,8 @@ body {
   gap: 20px;
 }
 
-.buttons-container>button {
-  background-color: white;
+.buttons-container > button {
+  background-color: transparent;
   color: black;
   border: 2px dashed black;
   border-radius: 9px;
@@ -46,11 +46,31 @@ body {
   transition: background-color 0.4s, color 0.4s;
 }
 
-.buttons-container>button:hover {
+.buttons-container > button:hover {
   background-color: black;
   color: white;
 }
 
 .passed-over {
   background-color: black;
+}
+
+*.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode.container,
+.dark-mode.buttons-container > button {
+  color: white;
+  border: 2px dashed white;
+}
+
+.dark-mode.container .passed-over {
+  background-color: white;
+}
+
+.dark-mode.buttons-container > button:hover {
+  background-color: white;
+  color: black;
 }
