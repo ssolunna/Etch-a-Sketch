@@ -20,7 +20,12 @@ body {
   flex-flow: row wrap;
 }
 
-body>button {
+.buttons-container {
+  display: flex;
+  gap: 20px;
+}
+
+.buttons-container>button {
   background-color: white;
   color: black;
   border: 2px dashed black;
@@ -30,7 +35,7 @@ body>button {
   transition: background-color 0.4s, color 0.4s;
 }
 
-body>button:hover {
+.buttons-container>button:hover {
   background-color: black;
   color: white;
 }

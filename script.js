@@ -6,9 +6,10 @@ const CONTAINER = document.createElement('div');
 CONTAINER.classList.add('container');
 const SQUARE = document.createElement('div');
 SQUARE.classList.add('square');
+let squaresPerSide = 16;
 let squaresSize = 0;
 
-createGrid(16);
+createGrid(squaresPerSide);
 
 function createGrid(squaresPerSide) {
   let grid = squaresPerSide * squaresPerSide;
@@ -34,10 +35,19 @@ function addSquares(grid) {
   });
 }
 
+const BUTTONS_CONTAINER = document.createElement('div');
+BUTTONS_CONTAINER.classList.add('buttons-container');
+CONTAINER.before(BUTTONS_CONTAINER);
+
 const NEW_GRID_BTN = document.createElement('button');
 NEW_GRID_BTN.textContent = 'New Grid';
-CONTAINER.before(NEW_GRID_BTN);
+BUTTONS_CONTAINER.appendChild(NEW_GRID_BTN);
 NEW_GRID_BTN.onclick = () => {
-  let squaresPerSide = Math.floor(Math.abs(prompt('Number of squares per side for the new grid (min 2, max 100):')));
+  squaresPerSide = Math.floor(Math.abs(prompt('Number of squares per side for the new grid (min 2, max 100):')));
   if (squaresPerSide > 1 && squaresPerSide < 101) createGrid(squaresPerSide);
 }
+
+const CLEAR_BTN = document.createElement('button');
+CLEAR_BTN.textContent = 'Clear';
+BUTTONS_CONTAINER.appendChild(CLEAR_BTN);
+CLEAR_BTN.onclick = () => createGrid(squaresPerSide);
