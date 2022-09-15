@@ -49,13 +49,29 @@ BUTTONS_CONTAINER.appendChild(NEW_GRID_BTN);
 NEW_GRID_BTN.onclick = () => {
   squaresPerSide = Math.floor(Math.abs(prompt('Number of squares per side for the new grid (min 2, max 100):')));
   if (squaresPerSide > 1 && squaresPerSide < 101) createGrid(squaresPerSide);
-}
+};
 
 const CLEAR_BTN = document.createElement('button');
 CLEAR_BTN.textContent = 'Clear';
 BUTTONS_CONTAINER.appendChild(CLEAR_BTN);
 CLEAR_BTN.onclick = () => createGrid(squaresPerSide);
 
-document.querySelectorAll('body, body>*, body>*>*').forEach(element => {
-  element.classList.add('dark-mode');
-});
+const DARK_MODE_BTN = document.createElement('button');
+DARK_MODE_BTN.textContent = 'Dark Mode';
+DARK_MODE_BTN.setAttribute('id', 'dark-mode');
+BUTTONS_CONTAINER.appendChild(DARK_MODE_BTN);
+DARK_MODE_BTN.onclick = () => toggleDarkMode();
+
+function toggleDarkMode() {
+  if (BODY.getAttribute('class') === 'dark-mode') {
+    DARK_MODE_BTN.textContent = 'Dark Mode'
+    document.querySelectorAll('body, body>*, body>*>*').forEach(element => {
+      element.classList.remove('dark-mode');
+    });
+  } else {
+    DARK_MODE_BTN.textContent = 'Light Mode'
+    document.querySelectorAll('body, body>*, body>*>*').forEach(element => {
+      element.classList.add('dark-mode');
+    });
+  }
+}
